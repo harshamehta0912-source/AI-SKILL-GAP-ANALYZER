@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 Employee Dashboard</h1>
+
+    <canvas id="scoreChart" width="700" height="300"></canvas>
+
+    <br><br>
+
+    <table border="1" cellpadding="10" cellspacing="0" style="margin:auto; width:100%; border-collapse:collapse;">
+
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Score</th>
+        </tr>
+
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee[1] }}</td>
+            <td>{{ employee[2] }}</td>
+            <td>{{ employee[3] }}%</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/">⬅ Back to Home</a>
+
+</div>
+
+<script>
+
+const ctx = document.getElementById('scoreChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+       labels: ["Harshita"],
+       datasets:[{
+         labels:"Skill Match Score (%)",
+       }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
+

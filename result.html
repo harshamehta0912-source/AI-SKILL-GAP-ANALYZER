@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Skill Gap Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        
+
+     
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🤖 AI Skill Gap Result</h1>
+
+<h2>{{ name }}</h2>
+
+<p><b>Job Role:</b> {{ role }}</p>
+
+<h3>Missing Skills</h3>
+
+<ul>
+{% for skill in missing %}
+<li>{{ skill }}</li>
+{% endfor %}
+</ul>
+
+<h3>Recommended Courses</h3>
+
+<ul>
+{% for course in suggestions %}
+<li>{{ course }}</li>
+{% endfor %}
+</ul>
+
+<div style="width:100%;background:#ddd;border-radius:10px;">
+    <div style="width:{{ score }}%;background:#22c55e;color:white;padding:10px;border-radius:10px;">
+        {{ score }}%
+    </div>
+</div>
+
+<br>
+
+<h2 class="score">{{ score }}% Match</h2>
+
+<br><br>
+
+<a href="{{ url_for('download', name=name, role=role, score=score) }}">
+    📄 Download PDF Report
+</a>
+    
+<br><br>
+<a href="/">⬅ Analyze Again</a>
+
+</div>
+
+</body>
+</html>
