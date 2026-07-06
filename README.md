@@ -87,14 +87,10 @@ http://127.0.0.1:5000
 
 ---
 
-## 📸 Screenshots
-
 - 🏠 Home Page
 - 📊 Employee Dashboard
 - 📄 PDF Skill Report
 - 📈 Skill Match Result
-
-(Add screenshots here)
 
 ---
 
@@ -110,10 +106,10 @@ http://127.0.0.1:5000
 
 ## 👩‍💻 Author
 
-**Harsha Mehta**
+**Harshita Mehta**
 
 GitHub: https://github.com/harshamehta0912-source
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+
